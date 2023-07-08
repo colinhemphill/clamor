@@ -10,10 +10,12 @@ import { tempoAtom } from '@/state/tempo';
 import { useAtomValue } from 'jotai';
 import { useCallback } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
 enum Swing {
-  Dotted,
-  Triplet,
+  Straight = 'straight',
+  Dotted = 'dotted',
+  Triplet = 'triplet',
 }
 
 interface Timing {
@@ -66,36 +68,77 @@ export default function TimeChart() {
         <CardTitle>Calculated Times for {tempo} BPM</CardTitle>
       </CardHeader>
       <CardContent>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Beats</TableHead>
-              <TableHead>Time in MS</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {timings.map((timing) => (
-              <>
+        <Tabs defaultValue={Swing.Straight}>
+          <TabsList className="grid w-full grid-cols-3">
+            <TabsTrigger value={Swing.Straight}>Straight</TabsTrigger>
+            <TabsTrigger value={Swing.Dotted}>Dotted</TabsTrigger>
+            <TabsTrigger value={Swing.Triplet}>Triplet</TabsTrigger>
+          </TabsList>
+
+          {/* Straight beats */}
+          <TabsContent value={Swing.Straight}>
+            <Table>
+              <TableHeader>
                 <TableRow>
-                  <TableCell>{timing.name}</TableCell>
-                  <TableCell>{getTime(timing.beats)} ms</TableCell>
+                  <TableHead>Beats</TableHead>
+                  <TableHead>Time in MS</TableHead>
                 </TableRow>
+              </TableHeader>
+              <TableBody>
+                {timings.map((timing) => (
+                  <TableRow>
+                    <TableCell>{timing.name}</TableCell>
+                    <TableCell>{getTime(timing.beats)} ms</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TabsContent>
+
+          {/* Dotted beats */}
+          <TabsContent value={Swing.Dotted}>
+            <Table>
+              <TableHeader>
                 <TableRow>
-                  <TableCell>{timing.name} dotted</TableCell>
-                  <TableCell>
-                    {getTime(timing.beats, Swing.Dotted)} ms
-                  </TableCell>
+                  <TableHead>Beats</TableHead>
+                  <TableHead>Time in MS</TableHead>
                 </TableRow>
+              </TableHeader>
+              <TableBody>
+                {timings.map((timing) => (
+                  <TableRow>
+                    <TableCell>{timing.name}</TableCell>
+                    <TableCell>
+                      {getTime(timing.beats, Swing.Dotted)} ms
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TabsContent>
+
+          {/* Triplet beats */}
+          <TabsContent value={Swing.Triplet}>
+            <Table>
+              <TableHeader>
                 <TableRow>
-                  <TableCell>{timing.name} triplet</TableCell>
-                  <TableCell>
-                    {getTime(timing.beats, Swing.Triplet)} ms
-                  </TableCell>
+                  <TableHead>Beats</TableHead>
+                  <TableHead>Time in MS</TableHead>
                 </TableRow>
-              </>
-            ))}
-          </TableBody>
-        </Table>
+              </TableHeader>
+              <TableBody>
+                {timings.map((timing) => (
+                  <TableRow>
+                    <TableCell>{timing.name}</TableCell>
+                    <TableCell>
+                      {getTime(timing.beats, Swing.Triplet)} ms
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TabsContent>
+        </Tabs>
       </CardContent>
     </Card>
   );
