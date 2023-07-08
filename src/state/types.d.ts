@@ -1,0 +1,1 @@
+type Taps = Array<number>;

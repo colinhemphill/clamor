@@ -4,9 +4,9 @@
   "rsc": false,
   "tsx": true,
   "tailwind": {
-    "config": "tailwind.config.ts",
+    "config": "tailwind.config.js",
     "css": "src/globals.css",
-    "baseColor": "slate",
+    "baseColor": "zinc",
     "cssVariables": true
   },
   "aliases": {
