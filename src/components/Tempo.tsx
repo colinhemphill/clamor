@@ -5,6 +5,7 @@ import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { MAX_TEMPO, MIN_TEMPO, tapTempoAtom, tempoAtom } from '@/state/tempo';
 import { useAtom, useSetAtom } from 'jotai';
+import { Pointer } from 'lucide-react';
 
 export default function Tempo() {
   const [tempo, setTempo] = useAtom(tempoAtom);
@@ -19,7 +20,7 @@ export default function Tempo() {
         <div className="flex flex-col gap-2">
           <Label htmlFor="bpm">BPM</Label>
 
-          <div className="flex gap-2">
+          <div className="flex flex-col gap-2 sm:flex-row">
             <Input
               className="appearance-none"
               id="bpm"
@@ -30,7 +31,10 @@ export default function Tempo() {
               type="number"
               value={tempo}
             />
-            <Button onClick={setTapTempo}>TAP</Button>
+            <Button onClick={setTapTempo} variant="theme">
+              <Pointer className="mr-1" size="1em" />
+              TAP
+            </Button>
           </div>
         </div>
 

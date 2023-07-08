@@ -34,6 +34,9 @@
     --ring: 240 5% 64.9%;
 
     --radius: 0.5rem;
+
+    --theme: 193 98% 70%;
+    --theme-foreground: 240 10% 4%;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -66,6 +69,9 @@
       --destructive-foreground: 0 85.7% 97.3%;
 
       --ring: 240 3.7% 15.9%;
+
+      --theme: 193 98% 70%;
+      --theme-foreground: 240 10% 4%;
     }
   }
 }
@@ -83,8 +89,4 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-input[type='number'] {
-  -moz-appearance: textfield;
 }
