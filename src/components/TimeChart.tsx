@@ -9,6 +9,7 @@ import {
 import { tempoAtom } from '@/state/tempo';
 import { useAtomValue } from 'jotai';
 import { useCallback } from 'react';
+import TimeChartHeader from './TimeChartHeader';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
@@ -44,6 +45,14 @@ const timings: Array<Timing> = [
     name: '1/16',
     beats: 1 / 4,
   },
+  {
+    name: '1/32',
+    beats: 1 / 8,
+  },
+  {
+    name: '1/64',
+    beats: 1 / 16,
+  },
 ];
 
 export default function TimeChart() {
@@ -78,12 +87,7 @@ export default function TimeChart() {
           {/* Straight beats */}
           <TabsContent value={Swing.Straight}>
             <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Beats</TableHead>
-                  <TableHead>Time in MS</TableHead>
-                </TableRow>
-              </TableHeader>
+              <TimeChartHeader />
               <TableBody>
                 {timings.map((timing) => (
                   <TableRow key={timing.name}>
@@ -98,12 +102,7 @@ export default function TimeChart() {
           {/* Dotted beats */}
           <TabsContent value={Swing.Dotted}>
             <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Beats</TableHead>
-                  <TableHead>Time in MS</TableHead>
-                </TableRow>
-              </TableHeader>
+              <TimeChartHeader />
               <TableBody>
                 {timings.map((timing) => (
                   <TableRow key={`${timing.name}-${Swing.Dotted}`}>
@@ -120,12 +119,7 @@ export default function TimeChart() {
           {/* Triplet beats */}
           <TabsContent value={Swing.Triplet}>
             <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Beats</TableHead>
-                  <TableHead>Time in MS</TableHead>
-                </TableRow>
-              </TableHeader>
+              <TimeChartHeader />
               <TableBody>
                 {timings.map((timing) => (
                   <TableRow key={`${timing.name}-${Swing.Triplet}`}>
