@@ -86,7 +86,7 @@ export default function TimeChart() {
               </TableHeader>
               <TableBody>
                 {timings.map((timing) => (
-                  <TableRow>
+                  <TableRow key={timing.name}>
                     <TableCell>{timing.name}</TableCell>
                     <TableCell>{getTime(timing.beats)} ms</TableCell>
                   </TableRow>
@@ -106,7 +106,7 @@ export default function TimeChart() {
               </TableHeader>
               <TableBody>
                 {timings.map((timing) => (
-                  <TableRow>
+                  <TableRow key={`${timing.name}-${Swing.Dotted}`}>
                     <TableCell>{timing.name}</TableCell>
                     <TableCell>
                       {getTime(timing.beats, Swing.Dotted)} ms
@@ -128,7 +128,7 @@ export default function TimeChart() {
               </TableHeader>
               <TableBody>
                 {timings.map((timing) => (
-                  <TableRow>
+                  <TableRow key={`${timing.name}-${Swing.Triplet}`}>
                     <TableCell>{timing.name}</TableCell>
                     <TableCell>
                       {getTime(timing.beats, Swing.Triplet)} ms
