@@ -19,6 +19,7 @@ import {
 } from '@/state/tempo';
 import { useAtom, useSetAtom } from 'jotai';
 import { Pointer } from 'lucide-react';
+import { useEffect } from 'react';
 
 let timeout: NodeJS.Timeout;
 
@@ -43,6 +44,20 @@ export default function Tempo() {
       resetTaps();
     }, 5000);
   };
+
+  const spaceHandler = ({ code }: KeyboardEvent) => {
+    if (code === 'Space') {
+      tap();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', spaceHandler);
+
+    return () => {
+      window.removeEventListener('keydown', spaceHandler);
+    };
+  }, []);
 
   return (
     <div className="flex flex-col justify-between gap-4 sm:flex-row">
@@ -83,7 +98,7 @@ export default function Tempo() {
       <Card>
         <CardHeader>
           <CardTitle>Tap Tempo</CardTitle>
-          <CardDescription>Tap average resets after 5 seconds</CardDescription>
+          <CardDescription>Tap average resets after 5 seconds.</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-2">
           <div className="flex gap-2">
@@ -91,9 +106,13 @@ export default function Tempo() {
             <div>{taps.length}</div>
           </div>
           <Button
-            autoFocus
             className="w-full"
             onClick={tap}
+            onKeyDown={(e) => {
+              if (e.code === 'Space') {
+                e.preventDefault();
+              }
+            }}
             size="xl"
             variant="theme"
           >
