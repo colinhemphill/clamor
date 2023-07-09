@@ -1,11 +1,4 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table';
+import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
 import { tempoAtom } from '@/state/tempo';
 import { useAtomValue } from 'jotai';
 import { useCallback } from 'react';
@@ -76,7 +69,7 @@ export default function TimeChart() {
       <CardHeader>
         <CardTitle>Calculated Times for {tempo} BPM</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="tabular-nums">
         <Tabs defaultValue={Swing.Straight}>
           <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value={Swing.Straight}>Straight</TabsTrigger>
