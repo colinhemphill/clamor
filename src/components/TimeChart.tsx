@@ -65,7 +65,7 @@ export default function TimeChart() {
   );
 
   return (
-    <Card>
+    <Card className="mt-8">
       <CardHeader>
         <CardTitle>Calculated Times for {tempo} BPM</CardTitle>
       </CardHeader>

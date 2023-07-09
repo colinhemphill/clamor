@@ -18,7 +18,7 @@ import {
   tempoAtom,
 } from '@/state/tempo';
 import { useAtom, useSetAtom } from 'jotai';
-import { Pointer } from 'lucide-react';
+import { Pointer, RotateCcw } from 'lucide-react';
 import { useEffect } from 'react';
 
 let timeout: NodeJS.Timeout;
@@ -126,6 +126,7 @@ export default function Tempo() {
             }}
             variant="secondary"
           >
+            <RotateCcw className="mr-1" size="1em" />
             Reset taps
           </Button>
         </CardContent>

@@ -36,10 +36,11 @@
     "windows": [
       {
         "fullscreen": false,
+        "center": true,
         "resizable": true,
-        "title": "adsr-helper",
+        "title": "ADSR Helper",
         "width": 800,
-        "height": 600
+        "height": 800
       }
     ]
   }
