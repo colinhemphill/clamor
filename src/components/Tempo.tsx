@@ -9,6 +9,11 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from '@/components/ui/tooltip';
 import { useToast } from '@/components/ui/use-toast';
 import {
   MAX_TEMPO,
@@ -20,6 +25,7 @@ import {
 import { useAtom, useSetAtom } from 'jotai';
 import { Pointer, RotateCcw } from 'lucide-react';
 import { useEffect } from 'react';
+import HelpIcon from './HelpIcon';
 
 let timeout: NodeJS.Timeout;
 
@@ -31,6 +37,9 @@ export default function Tempo() {
 
   const resetTaps = () => {
     setTaps([]);
+    toast({
+      description: 'Tap average was reset.',
+    });
   };
 
   const tap = () => {
@@ -38,9 +47,6 @@ export default function Tempo() {
     setTapTempo();
 
     timeout = setTimeout(() => {
-      toast({
-        description: 'Tap average was reset automatically',
-      });
       resetTaps();
     }, 5000);
   };
@@ -98,13 +104,24 @@ export default function Tempo() {
       <Card>
         <CardHeader>
           <CardTitle>Tap Tempo</CardTitle>
-          <CardDescription>Tap average resets after 5 seconds.</CardDescription>
+          <CardDescription>
+            <div className="flex items-center gap-2">
+              <HelpIcon>
+                <div>
+                  Keeps a running list of taps that are averaged over time.
+                </div>
+                <div>
+                  Average resets automatically after 5 seconds of inactivity.
+                </div>
+              </HelpIcon>
+              <div>
+                <span className="font-bold">Timing taps: </span>
+                <span className="tabular-nums">{taps.length}</span>
+              </div>
+            </div>
+          </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-2">
-          <div className="flex gap-2">
-            <div className="font-bold tabular-nums">Timing taps: </div>
-            <div>{taps.length}</div>
-          </div>
           <Button
             className="w-full"
             onClick={tap}
@@ -119,16 +136,21 @@ export default function Tempo() {
             <Pointer className="mr-1" size="1em" />
             TAP
           </Button>
-          <Button
-            onClick={() => {
-              resetTaps();
-              clearTimeout(timeout);
-            }}
-            variant="secondary"
-          >
-            <RotateCcw className="mr-1" size="1em" />
-            Reset taps
-          </Button>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                onClick={() => {
+                  resetTaps();
+                  clearTimeout(timeout);
+                }}
+                variant="secondary"
+              >
+                <RotateCcw className="mr-1" size="1em" />
+                Reset taps
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>Manually reset the taps average.</TooltipContent>
+          </Tooltip>
         </CardContent>
       </Card>
     </div>

@@ -1,10 +1,10 @@
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { tempoAtom } from '@/state/tempo';
 import { useAtomValue } from 'jotai';
 import { useCallback } from 'react';
 import TimeChartHeader from './TimeChartHeader';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 
 enum Swing {
   Straight = 'straight',

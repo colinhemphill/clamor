@@ -83,6 +83,15 @@
   body {
     @apply bg-background text-foreground;
   }
+  a,
+  .link {
+    text-decoration: underline;
+    @apply decoration-theme transition-colors;
+  }
+  a:hover,
+  .link:hover {
+    @apply decoration-inherit;
+  }
 }
 
 input::-webkit-outer-spin-button,
