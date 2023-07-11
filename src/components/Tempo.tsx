@@ -104,20 +104,18 @@ export default function Tempo() {
       <Card>
         <CardHeader>
           <CardTitle>Tap Tempo</CardTitle>
-          <CardDescription>
-            <div className="flex items-center gap-2">
-              <HelpIcon>
-                <div>
-                  Keeps a running list of taps that are averaged over time.
-                </div>
-                <div>
-                  Average resets automatically after 5 seconds of inactivity.
-                </div>
-              </HelpIcon>
+          <CardDescription className="flex items-center gap-2">
+            <HelpIcon>
               <div>
-                <span className="font-bold">Timing taps: </span>
-                <span className="tabular-nums">{taps.length}</span>
+                Keeps a running list of taps that are averaged over time.
               </div>
+              <div>
+                Average resets automatically after 5 seconds of inactivity.
+              </div>
+            </HelpIcon>
+            <div>
+              <span className="font-bold">Timing taps: </span>
+              <span className="tabular-nums">{taps.length}</span>
             </div>
           </CardDescription>
         </CardHeader>

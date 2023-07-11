@@ -2,6 +2,7 @@ import Tempo from '@/components/Tempo';
 import TimeChart from '@/components/TimeChart';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import { Analytics } from '@vercel/analytics/react';
 import Footer from './components/footer/Footer';
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
         <Footer />
       </div>
       <Toaster />
+      <Analytics />
     </TooltipProvider>
   );
 }
