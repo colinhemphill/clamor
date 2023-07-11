@@ -2,17 +2,17 @@ import Tempo from '@/components/Tempo';
 import TimeChart from '@/components/TimeChart';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import Footer from './components/Footer';
+import Footer from './components/footer/Footer';
 
 export default function App() {
   return (
-    <div className="container max-w-screen-lg">
-      <TooltipProvider>
+    <TooltipProvider>
+      <div className="container flex max-w-screen-lg flex-col gap-8">
         <Tempo />
         <TimeChart />
-        <Toaster />
-      </TooltipProvider>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+      <Toaster />
+    </TooltipProvider>
   );
 }

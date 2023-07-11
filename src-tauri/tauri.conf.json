@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "ADSR Helper",
+    "productName": "Clamor",
     "version": "1.0.0"
   },
   "tauri": {
@@ -21,7 +21,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "com.adsr.dev",
+      "identifier": "com.clamor.dev",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -38,7 +38,7 @@
         "fullscreen": false,
         "center": true,
         "resizable": true,
-        "title": "ADSR Helper",
+        "title": "Clamor",
         "width": 800,
         "height": 800
       }

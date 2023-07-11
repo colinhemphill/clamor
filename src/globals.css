@@ -35,8 +35,8 @@
 
     --radius: 0.5rem;
 
-    --theme: 193 98% 70%;
-    --theme-foreground: 240 10% 4%;
+    --theme: 195 100% 31.5%;
+    --theme-foreground: 0 0% 98%;
   }
 
   @media (prefers-color-scheme: dark) {
