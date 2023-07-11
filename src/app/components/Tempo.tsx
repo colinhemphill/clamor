@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -24,7 +26,7 @@ import {
 } from '@/state/tempo';
 import { useAtom, useSetAtom } from 'jotai';
 import { Pointer, RotateCcw } from 'lucide-react';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import HelpIcon from './HelpIcon';
 
 let timeout: NodeJS.Timeout;
@@ -35,27 +37,30 @@ export default function Tempo() {
   const [tempo, setTempo] = useAtom(tempoAtom);
   const [taps, setTaps] = useAtom(tapsAtom);
 
-  const resetTaps = () => {
+  const resetTaps = useCallback(() => {
     setTaps([]);
     toast({
       description: 'Tap average was reset.',
     });
-  };
+  }, [setTaps, toast]);
 
-  const tap = () => {
+  const tap = useCallback(() => {
     clearTimeout(timeout);
     setTapTempo();
 
     timeout = setTimeout(() => {
       resetTaps();
     }, 5000);
-  };
+  }, [resetTaps, setTapTempo]);
 
-  const spaceHandler = ({ code }: KeyboardEvent) => {
-    if (code === 'Space') {
-      tap();
-    }
-  };
+  const spaceHandler = useCallback(
+    ({ code }: KeyboardEvent) => {
+      if (code === 'Space') {
+        tap();
+      }
+    },
+    [tap],
+  );
 
   useEffect(() => {
     window.addEventListener('keydown', spaceHandler);
@@ -63,7 +68,7 @@ export default function Tempo() {
     return () => {
       window.removeEventListener('keydown', spaceHandler);
     };
-  }, []);
+  }, [spaceHandler]);
 
   return (
     <div className="flex flex-col justify-between gap-4 sm:flex-row">

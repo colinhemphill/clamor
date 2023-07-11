@@ -4,7 +4,7 @@ import OpenSourceDialog from './OpenSourceDialog';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="mt-8">
       <Alert>
         <AlertDescription className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center">
           <div className="flex-grow">
