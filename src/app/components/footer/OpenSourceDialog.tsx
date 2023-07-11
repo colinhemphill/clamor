@@ -29,10 +29,10 @@ export default function OpenSourceDialog() {
             <a href="https://react.dev/">React</a>
           </li>
           <li>
-            <a href="https://tauri.app/">Tauri</a>
+            <a href="https://nextjs.org/">Next.js</a>
           </li>
           <li>
-            <a href="https://vitejs.dev/">Vite</a>
+            <a href="https://tauri.app/">Tauri</a>
           </li>
           <li>
             <a href="https://jotai.org/">Jotai</a>
