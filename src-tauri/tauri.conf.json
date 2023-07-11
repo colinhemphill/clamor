@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "Clamor",
+    "productName": "Clamor Studio",
     "version": "1.0.0"
   },
   "tauri": {
@@ -38,7 +38,7 @@
         "fullscreen": false,
         "center": true,
         "resizable": true,
-        "title": "Clamor",
+        "title": "Clamor Studio",
         "width": 800,
         "height": 800
       }
