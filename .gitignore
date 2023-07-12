@@ -35,3 +35,7 @@ dist-ssr
 
 # vercel
 .vercel
+
+# Tauri
+.xwin-cache
+.cargo

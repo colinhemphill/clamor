@@ -5,8 +5,10 @@ import AboutDialog from './AboutDialog';
 import OpenSourceDialog from './OpenSourceDialog';
 
 export default async function Footer() {
-  const macDownload = await get('tauri-desktop-mac-download');
-  const windowsDownload = await get('tauri-desktop-windows-download');
+  const macDownload = (await get('tauri-desktop-mac-download')) as string;
+  const windowsDownload = (await get(
+    'tauri-desktop-windows-download',
+  )) as string;
 
   return (
     <footer className="mt-8 flex flex-col gap-2">
@@ -17,7 +19,7 @@ export default async function Footer() {
           {macDownload && (
             <a
               className={buttonVariants({ size: 'sm', variant: 'secondary' })}
-              href=""
+              href={macDownload}
             >
               Mac
             </a>
@@ -25,7 +27,7 @@ export default async function Footer() {
           {windowsDownload && (
             <a
               className={buttonVariants({ size: 'sm', variant: 'secondary' })}
-              href=""
+              href={windowsDownload}
             >
               Windows
             </a>
