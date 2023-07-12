@@ -1,7 +1,7 @@
 {
   "build": {
-    "beforeDevCommand": "NEXT_PUBLIC_DESKTOP_BUILD=tauri pnpm dev",
-    "beforeBuildCommand": "NEXT_PUBLIC_DESKTOP_BUILD=tauri pnpm build",
+    "beforeDevCommand": "cross-env NEXT_PUBLIC_DESKTOP_BUILD=tauri pnpm dev",
+    "beforeBuildCommand": "cross-env NEXT_PUBLIC_DESKTOP_BUILD=tauri pnpm build",
     "devPath": "http://localhost:3000",
     "distDir": "../out",
     "withGlobalTauri": false
