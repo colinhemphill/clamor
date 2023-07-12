@@ -136,7 +136,7 @@ export default function Tempo() {
             size="xl"
             variant="theme"
           >
-            <Pointer className="mr-1" size="1em" />
+            <Pointer className="mr-1" name="Pointing hand icon" size="1em" />
             TAP
           </Button>
           <Tooltip>
@@ -148,7 +148,11 @@ export default function Tempo() {
                 }}
                 variant="secondary"
               >
-                <RotateCcw className="mr-1" size="1em" />
+                <RotateCcw
+                  className="mr-1"
+                  name="Counter clockwise rotation icon"
+                  size="1em"
+                />
                 Reset taps
               </Button>
             </TooltipTrigger>

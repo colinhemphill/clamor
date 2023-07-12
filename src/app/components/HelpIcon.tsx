@@ -1,12 +1,19 @@
 import { HelpCircle } from 'lucide-react';
 import { PropsWithChildren } from 'react';
+import { Button } from './ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 export default function HelpIcon({ children }: PropsWithChildren) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <HelpCircle className="inline-flex cursor-help" size="1em" />
+        <Button className="h-auto p-0" variant="ghost">
+          <HelpCircle
+            className="inline-flex cursor-help"
+            name="Help icon"
+            size="1em"
+          />
+        </Button>
       </TooltipTrigger>
       <TooltipContent>{children}</TooltipContent>
     </Tooltip>

@@ -10,6 +10,7 @@ import {
   metadataOpenGraphDefaults,
   metadataTwitterDefaults,
 } from './lib/metadata';
+import { IS_TAURI } from './lib/utils';
 
 export const metadata: Metadata = {
   // https://beta.nextjs.org/docs/api-reference/metadata#metadatabase
@@ -55,7 +56,8 @@ export default function App({ children }: PropsWithChildren) {
         <TooltipProvider>
           <div className="container max-w-screen-lg">
             <main>{children}</main>
-            <Footer />
+
+            {!IS_TAURI && <Footer />}
           </div>
         </TooltipProvider>
         <Toaster />

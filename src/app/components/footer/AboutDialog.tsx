@@ -25,7 +25,10 @@ export default function AboutDialog() {
             Clamor was built by Colin Hemphill. Full time I’m a front end
             software engineer, and in my free time I am the producer and
             guitarist for{' '}
-            <a href="https://dotdotdarknessmusic.com">dot.darkness</a>.
+            <a className="link" href="https://dotdotdarknessmusic.com">
+              dot.darkness
+            </a>
+            .
           </DialogDescription>
         </DialogHeader>
         <p>
@@ -43,7 +46,10 @@ export default function AboutDialog() {
         </ul>
         <p>
           If you have any feedback, please use the contact form on{' '}
-          <a href="https://colinhemphill.com">my website</a>.
+          <a className="link" href="https://colinhemphill.com">
+            my website
+          </a>
+          .
         </p>
       </DialogContent>
     </Dialog>

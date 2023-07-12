@@ -83,13 +83,15 @@
   body {
     @apply bg-background text-foreground;
   }
-  a,
-  .link {
+  .link,
+  p a,
+  li a {
     text-decoration: underline;
     @apply decoration-theme transition-colors;
   }
-  a:hover,
-  .link:hover {
+  .link:hover,
+  p a:hover,
+  li a:hover {
     @apply decoration-inherit;
   }
 }
