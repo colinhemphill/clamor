@@ -78,7 +78,9 @@ export default function Tempo() {
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-2">
-            <Label htmlFor="bpm">BPM</Label>
+            <Label htmlFor="bpm" id="bpm-label">
+              BPM
+            </Label>
             <Input
               id="bpm"
               min={MIN_TEMPO}
@@ -98,6 +100,7 @@ export default function Tempo() {
           </div>
 
           <Slider
+            aria-labelledby="bpm-label"
             className="mt-8"
             max={MAX_TEMPO}
             min={MIN_TEMPO}

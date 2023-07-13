@@ -8,6 +8,7 @@ export default function HelpIcon({ children }: PropsWithChildren) {
     <Tooltip>
       <TooltipTrigger asChild>
         <Button className="h-auto p-0" variant="ghost">
+          <span className="sr-only">Help</span>
           <HelpCircle
             className="inline-flex cursor-help"
             name="Help icon"
