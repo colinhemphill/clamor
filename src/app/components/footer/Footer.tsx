@@ -2,6 +2,8 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import AboutDialog from './AboutDialog';
 import Downloads from './Downloads';
 import OpenSourceDialog from './OpenSourceDialog';
+import { Github } from 'lucide-react';
+import { buttonVariants } from '../ui/button';
 
 export default function Footer() {
   return (
@@ -9,7 +11,7 @@ export default function Footer() {
       <Downloads />
 
       <Alert>
-        <AlertDescription className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center">
+        <AlertDescription className="flex flex-col items-center justify-between gap-2 text-sm text-muted-foreground md:flex-row">
           <div className="flex-grow">
             © Copyright{' '}
             <a className="link" href="https://colinhemphill.com">
@@ -20,6 +22,13 @@ export default function Footer() {
 
           <AboutDialog />
           <OpenSourceDialog />
+          <a
+            className={buttonVariants({ variant: 'secondary', size: 'icon' })}
+            href="https://github.com/colinhemphill/clamor"
+          >
+            <span className="sr-only">GitHub</span>
+            <Github size="1.25em" />
+          </a>
         </AlertDescription>
       </Alert>
     </footer>

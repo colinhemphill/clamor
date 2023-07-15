@@ -10,7 +10,7 @@ export default function Downloads() {
 
   return (
     <Alert>
-      <AlertDescription className="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center">
+      <AlertDescription className="flex flex-col items-center gap-2 text-sm text-muted-foreground md:flex-row">
         <div className="flex-grow">Download for desktop</div>
 
         {(!downloads || isLoading) && (
