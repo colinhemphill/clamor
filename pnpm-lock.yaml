@@ -41,9 +41,6 @@ dependencies:
   class-variance-authority:
     specifier: 0.6.1
     version: 0.6.1
-  clsx:
-    specifier: 1.2.1
-    version: 1.2.1
   jotai:
     specifier: 2.2.2
     version: 2.2.2(react@18.2.0)
