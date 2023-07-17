@@ -1,7 +1,6 @@
-import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-
-import { cn } from '@/lib/utils';
+import * as React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const alertVariants = cva(
   'relative w-full rounded-lg border px-4 py-3 text-sm',
@@ -26,7 +25,7 @@ const Alert = React.forwardRef<
   <div
     ref={ref}
     role="alert"
-    className={cn(alertVariants({ variant }), className)}
+    className={twMerge(alertVariants({ variant }), className)}
     {...props}
   />
 ));
@@ -38,7 +37,10 @@ const AlertTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h5
     ref={ref}
-    className={cn('mb-1 font-medium leading-none tracking-tight', className)}
+    className={twMerge(
+      'mb-1 font-medium leading-none tracking-tight',
+      className,
+    )}
     {...props}
   />
 ));
@@ -50,10 +52,10 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('text-sm [&_p]:leading-relaxed', className)}
+    className={twMerge('text-sm [&_p]:leading-relaxed', className)}
     {...props}
   />
 ));
 AlertDescription.displayName = 'AlertDescription';
 
-export { Alert, AlertTitle, AlertDescription };
+export { Alert, AlertDescription, AlertTitle };
