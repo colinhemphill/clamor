@@ -26,7 +26,7 @@
     "@vercel/edge-config": "0.2.1",
     "class-variance-authority": "0.7.0",
     "jotai": "2.2.2",
-    "lucide-react": "0.263.0",
+    "lucide-react": "0.263.1",
     "next": "13.4.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
