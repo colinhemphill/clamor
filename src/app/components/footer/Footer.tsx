@@ -1,9 +1,9 @@
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Github } from 'lucide-react';
+import { buttonVariants } from '../ui/button';
 import AboutDialog from './AboutDialog';
 import Downloads from './Downloads';
 import OpenSourceDialog from './OpenSourceDialog';
-import { Github } from 'lucide-react';
-import { buttonVariants } from '../ui/button';
 
 export default function Footer() {
   return (
