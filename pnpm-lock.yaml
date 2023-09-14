@@ -36,8 +36,8 @@ dependencies:
     specifier: 1.0.2
     version: 1.0.2
   '@vercel/edge-config':
-    specifier: 0.3.0
-    version: 0.3.0
+    specifier: 0.4.0
+    version: 0.4.0
   class-variance-authority:
     specifier: 0.7.0
     version: 0.7.0
@@ -1201,8 +1201,8 @@ packages:
     resolution: {integrity: sha512-NRIBwfcS0bUoUbRWlNGetqjvLSwgYH/BqKqDN7vK1g32p7dN96k0712COgaz6VFizAm9b0g6IG6hR6+hc0KCPg==}
     dev: false
 
-  /@vercel/edge-config@0.3.0:
-    resolution: {integrity: sha512-gt+hS8ECMBExjCA+k8XVJVJy9t6O3hblg5qQZ8hSKV4hgTQ0DQg0uFGyi0/+djBPRZU66osLgHEDPGLmheOaDA==}
+  /@vercel/edge-config@0.4.0:
+    resolution: {integrity: sha512-v8AKiW/Tp9S79xapH3gXmOPXkkzJhUNnpyL6OX8xbHJvP7y5x0Oo/v/FUsGHpgay1x8a5vpddTH0Upw04RQcRA==}
     engines: {node: '>=14.6'}
     dependencies:
       '@vercel/edge-config-fs': 0.1.0
