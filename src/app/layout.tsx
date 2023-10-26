@@ -2,9 +2,8 @@ import Footer from '@/components/footer/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Analytics } from '@vercel/analytics/react';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { PropsWithChildren } from 'react';
-
 import './globals.css';
 import {
   metadataOpenGraphDefaults,
@@ -46,7 +45,11 @@ export const metadata: Metadata = {
     template: '%s | Clamor Studio',
   },
   twitter: metadataTwitterDefaults,
-  viewport: { width: 'device-width', initialScale: 1 },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function App({ children }: PropsWithChildren) {
