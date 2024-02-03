@@ -10,7 +10,8 @@
     "lint": "next lint",
     "start": "npx serve@latest out",
     "tauri": "tauri",
-    "types": "tsc -p tsconfig.json --noEmit"
+    "types": "tsc -p tsconfig.json --noEmit",
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.0.5",
@@ -25,7 +26,9 @@
     "@vercel/analytics": "1.1.2",
     "@vercel/edge-config": "0.4.1",
     "class-variance-authority": "0.7.0",
+    "husky": "9.0.10",
     "jotai": "2.6.4",
+    "lint-staged": "15.2.1",
     "lucide-react": "0.321.0",
     "next": "14.1.0",
     "react": "18.2.0",
