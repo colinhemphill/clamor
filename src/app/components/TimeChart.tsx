@@ -1,18 +1,30 @@
 'use client';
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import RateCell from '@/app/components/RateCell';
+import TimeCell from '@/app/components/TimeCell';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/app/components/ui/card';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
+} from '@/app/components/ui/table';
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/app/components/ui/tabs';
+import { Swing } from '@/lib/hooks/useTimeCalculations';
 import { tempoAtom } from '@/state/tempo';
 import { useAtomValue } from 'jotai';
 import { useCallback } from 'react';
 import TimeChartHeader from './TimeChartHeader';
-
-enum Swing {
-  Straight = 'straight',
-  Dotted = 'dotted',
-  Triplet = 'triplet',
-}
 
 interface Timing {
   beats: number;
@@ -61,9 +73,18 @@ export default function TimeChart() {
       } else if (swing === Swing.Triplet) {
         msPerBeat = msPerBeat * 0.667;
       }
-      return Math.round(msPerBeat * beats);
+      return msPerBeat * beats;
     },
     [tempo],
+  );
+
+  const getRate = useCallback(
+    (beats: number, swing?: Swing) => {
+      const ms = getTime(beats, swing);
+      const rate = 1000 / ms;
+      return rate;
+    },
+    [getTime],
   );
 
   return (
@@ -87,7 +108,8 @@ export default function TimeChart() {
                 {timings.map((timing) => (
                   <TableRow key={timing.name}>
                     <TableCell>{timing.name}</TableCell>
-                    <TableCell>{getTime(timing.beats)} ms</TableCell>
+                    <TimeCell beats={timing.beats} swing={Swing.Straight} />
+                    <RateCell beats={timing.beats} swing={Swing.Straight} />
                   </TableRow>
                 ))}
               </TableBody>
@@ -102,9 +124,8 @@ export default function TimeChart() {
                 {timings.map((timing) => (
                   <TableRow key={`${timing.name}-${Swing.Dotted}`}>
                     <TableCell>{timing.name}</TableCell>
-                    <TableCell>
-                      {getTime(timing.beats, Swing.Dotted)} ms
-                    </TableCell>
+                    <TimeCell beats={timing.beats} swing={Swing.Dotted} />
+                    <RateCell beats={timing.beats} swing={Swing.Dotted} />
                   </TableRow>
                 ))}
               </TableBody>
@@ -119,9 +140,8 @@ export default function TimeChart() {
                 {timings.map((timing) => (
                   <TableRow key={`${timing.name}-${Swing.Triplet}`}>
                     <TableCell>{timing.name}</TableCell>
-                    <TableCell>
-                      {getTime(timing.beats, Swing.Triplet)} ms
-                    </TableCell>
+                    <TimeCell beats={timing.beats} swing={Swing.Triplet} />
+                    <RateCell beats={timing.beats} swing={Swing.Triplet} />
                   </TableRow>
                 ))}
               </TableBody>

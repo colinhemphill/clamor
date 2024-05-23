@@ -1,4 +1,4 @@
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Alert, AlertDescription } from '@/app/components/ui/alert';
 import { Github } from 'lucide-react';
 import { buttonVariants } from '../ui/button';
 import AboutDialog from './AboutDialog';

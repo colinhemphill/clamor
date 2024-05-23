@@ -1,6 +1,6 @@
 'use client';
 
-import { Downloads } from '@/api/downloads/route';
+import { Downloads } from '@/app/api/downloads/route';
 import useSWR, { Fetcher } from 'swr';
 
 const fetcher: Fetcher<Downloads, string> = (path) =>

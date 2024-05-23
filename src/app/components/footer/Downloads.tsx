@@ -1,8 +1,8 @@
 'use client';
 
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { buttonVariants } from '@/components/ui/button';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Alert, AlertDescription } from '@/app/components/ui/alert';
+import { buttonVariants } from '@/app/components/ui/button';
+import { Skeleton } from '@/app/components/ui/skeleton';
 import useDownloads from '@/lib/hooks/useDownloads';
 
 export default function Downloads() {

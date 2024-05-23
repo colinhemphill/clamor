@@ -1,6 +1,6 @@
 'use client';
 
-import type { ToastActionElement, ToastProps } from '@/components/ui/toast';
+import type { ToastActionElement, ToastProps } from '@/app/components/ui/toast';
 import * as React from 'react';
 
 const TOAST_LIMIT = 1;

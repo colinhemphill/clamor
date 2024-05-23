@@ -1,15 +1,15 @@
-import Footer from '@/components/footer/Footer';
-import { Toaster } from '@/components/ui/toaster';
-import { TooltipProvider } from '@/components/ui/tooltip';
+import Footer from '@/app/components/footer/Footer';
+import { Toaster } from '@/app/components/ui/toaster';
+import { TooltipProvider } from '@/app/components/ui/tooltip';
+import {
+  metadataOpenGraphDefaults,
+  metadataTwitterDefaults,
+} from '@/lib/metadata';
+import { IS_TAURI } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/react';
 import { Metadata, Viewport } from 'next';
 import { PropsWithChildren } from 'react';
 import './globals.css';
-import {
-  metadataOpenGraphDefaults,
-  metadataTwitterDefaults,
-} from './lib/metadata';
-import { IS_TAURI } from './lib/utils';
 
 export const metadata: Metadata = {
   // https://beta.nextjs.org/docs/api-reference/metadata#metadatabase
@@ -55,9 +55,9 @@ export const viewport: Viewport = {
 export default function App({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-      <body className="bg-background py-8 text-foreground">
+      <body className="bg-background text-foreground">
         <TooltipProvider>
-          <div className="container max-w-screen-lg">
+          <div className="container max-w-screen-lg py-8">
             <main>{children}</main>
 
             {!IS_TAURI && <Footer />}
