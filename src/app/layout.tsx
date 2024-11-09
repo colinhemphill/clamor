@@ -6,7 +6,6 @@ import {
   metadataTwitterDefaults,
 } from '@/lib/metadata';
 import { IS_TAURI } from '@/lib/utils';
-import { Analytics } from '@vercel/analytics/react';
 import { Metadata, Viewport } from 'next';
 import { PropsWithChildren } from 'react';
 import './globals.css';
@@ -65,8 +64,6 @@ export default function App({ children }: PropsWithChildren) {
         </TooltipProvider>
         <Toaster />
       </body>
-
-      <Analytics />
     </html>
   );
 }
