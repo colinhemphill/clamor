@@ -66,7 +66,7 @@ const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={twMerge(' flex items-center p-6 pt-0', className)}
+    className={twMerge('flex items-center p-6 pt-0', className)}
     {...props}
   />
 ));
