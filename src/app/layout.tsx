@@ -56,7 +56,7 @@ export default function App({ children }: PropsWithChildren) {
     <html lang="en">
       <body className="bg-background text-foreground">
         <TooltipProvider>
-          <div className="container max-w-screen-lg py-8">
+          <div className="container max-w-(--breakpoint-lg) py-8">
             <main>{children}</main>
 
             {!IS_TAURI && <Footer />}

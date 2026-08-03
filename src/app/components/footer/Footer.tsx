@@ -11,8 +11,8 @@ export default function Footer() {
       <Downloads />
 
       <Alert>
-        <AlertDescription className="flex flex-col items-center justify-between gap-2 text-sm text-muted-foreground md:flex-row">
-          <div className="flex-grow">
+        <AlertDescription className="text-muted-foreground flex flex-col items-center justify-between gap-2 text-sm md:flex-row">
+          <div className="grow">
             © Copyright{' '}
             <a className="link" href="https://colinhemphill.com">
               Colin Hemphill

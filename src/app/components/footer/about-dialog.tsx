@@ -13,7 +13,7 @@ export default function AboutDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="flex-shrink" size="sm" variant="secondary">
+        <Button className="shrink" size="sm" variant="secondary">
           About
         </Button>
       </DialogTrigger>
