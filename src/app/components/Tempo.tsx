@@ -86,7 +86,7 @@ export default function Tempo() {
               min={MIN_TEMPO}
               max={MAX_TEMPO}
               onChange={(e) => {
-                const val = parseInt(e.target.value);
+                const val = Number.parseInt(e.target.value);
                 if (isNaN(val) || val < MIN_TEMPO || val > MAX_TEMPO) {
                   setTempo(120);
                 } else {

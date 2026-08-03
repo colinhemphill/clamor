@@ -13,7 +13,7 @@ export default function useTimeCalculations(beats: number, swing: Swing) {
 
   const getTime = useCallback(
     (beats: number, swing?: Swing) => {
-      let msPerBeat = 60000 / tempo;
+      let msPerBeat = 60_000 / tempo;
       if (swing === Swing.Dotted) {
         msPerBeat = msPerBeat * 1.5;
       } else if (swing === Swing.Triplet) {

@@ -18,7 +18,7 @@ export const tapTempoAtom = atom(null, (get, set) => {
   let tempo = get(tempoAtom);
 
   if (taps.length > 1) {
-    tempo = (60000 * x) / y;
+    tempo = (60_000 * x) / y;
     tempo = Math.round(tempo);
     tempo = Math.min(tempo, MAX_TEMPO);
     tempo = Math.max(tempo, MIN_TEMPO);
