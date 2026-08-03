@@ -23,7 +23,7 @@
     ],
     "strictNullChecks": true,
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*"]
     },
     "types": ["bun-types"]
   },
