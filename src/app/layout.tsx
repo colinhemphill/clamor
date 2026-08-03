@@ -1,4 +1,4 @@
-import Footer from '@/app/components/footer/Footer';
+import Footer from '@/app/components/footer/footer';
 import { Toaster } from '@/app/components/ui/toaster';
 import { TooltipProvider } from '@/app/components/ui/tooltip';
 import {

@@ -1,5 +1,5 @@
 import { TableCell } from '@/app/components/ui/table';
-import useTimeCalculations, { Swing } from '@/lib/hooks/useTimeCalculations';
+import useTimeCalculations, { Swing } from '@/lib/hooks/use-time-calculation';
 
 interface RateCellProps {
   beats: number;

@@ -1,5 +1,5 @@
-import Tempo from '@/app/components/Tempo';
-import TimeChart from '@/app/components/TimeChart';
+import Tempo from '@/app/components/tempo';
+import TimeChart from '@/app/components/time-chart';
 
 export default function MainPage() {
   return (

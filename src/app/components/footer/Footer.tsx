@@ -1,9 +1,9 @@
 import { Alert, AlertDescription } from '@/app/components/ui/alert';
 import { SiGithub } from '@icons-pack/react-simple-icons';
 import { buttonVariants } from '../ui/button';
-import AboutDialog from './AboutDialog';
-import Downloads from './Downloads';
-import OpenSourceDialog from './OpenSourceDialog';
+import AboutDialog from './about-dialog';
+import Downloads from './downloads';
+import OpenSourceDialog from './open-source-dialog';
 
 export default function Footer() {
   return (

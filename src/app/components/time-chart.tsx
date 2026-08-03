@@ -1,7 +1,7 @@
 'use client';
 
-import RateCell from '@/app/components/RateCell';
-import TimeCell from '@/app/components/TimeCell';
+import RateCell from '@/app/components/rate-cell';
+import TimeCell from '@/app/components/time-cell';
 import {
   Card,
   CardContent,
@@ -20,11 +20,10 @@ import {
   TabsList,
   TabsTrigger,
 } from '@/app/components/ui/tabs';
-import { Swing } from '@/lib/hooks/useTimeCalculations';
+import { Swing } from '@/lib/hooks/use-time-calculation';
 import { tempoAtom } from '@/state/tempo';
 import { useAtomValue } from 'jotai';
-import { useCallback } from 'react';
-import TimeChartHeader from './TimeChartHeader';
+import TimeChartHeader from './time-chart-header';
 
 interface Timing {
   beats: number;
@@ -64,28 +63,6 @@ const timings: Array<Timing> = [
 
 export default function TimeChart() {
   const tempo = useAtomValue(tempoAtom);
-
-  const getTime = useCallback(
-    (beats: number, swing?: Swing) => {
-      let msPerBeat = 60_000 / tempo;
-      if (swing === Swing.Dotted) {
-        msPerBeat = msPerBeat * 1.5;
-      } else if (swing === Swing.Triplet) {
-        msPerBeat = msPerBeat * 0.667;
-      }
-      return msPerBeat * beats;
-    },
-    [tempo],
-  );
-
-  const getRate = useCallback(
-    (beats: number, swing?: Swing) => {
-      const ms = getTime(beats, swing);
-      const rate = 1000 / ms;
-      return rate;
-    },
-    [getTime],
-  );
 
   return (
     <Card>

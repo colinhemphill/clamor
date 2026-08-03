@@ -27,7 +27,7 @@ import {
 import { useAtom, useSetAtom } from 'jotai';
 import { Pointer, RotateCcw } from 'lucide-react';
 import { useCallback, useEffect } from 'react';
-import HelpIcon from './HelpIcon';
+import HelpIcon from './help-icon';
 
 let timeout: NodeJS.Timeout;
 
@@ -63,10 +63,10 @@ export default function Tempo() {
   );
 
   useEffect(() => {
-    window.addEventListener('keydown', spaceHandler);
+    globalThis.addEventListener('keydown', spaceHandler);
 
     return () => {
-      window.removeEventListener('keydown', spaceHandler);
+      globalThis.removeEventListener('keydown', spaceHandler);
     };
   }, [spaceHandler]);
 
@@ -87,7 +87,7 @@ export default function Tempo() {
               max={MAX_TEMPO}
               onChange={(e) => {
                 const val = Number.parseInt(e.target.value);
-                if (isNaN(val) || val < MIN_TEMPO || val > MAX_TEMPO) {
+                if (Number.isNaN(val) || val < MIN_TEMPO || val > MAX_TEMPO) {
                   setTempo(120);
                 } else {
                   setTempo(val);

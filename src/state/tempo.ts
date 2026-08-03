@@ -7,7 +7,7 @@ export const MAX_TEMPO = 300;
 export const tempoAtom = atomWithStorage<number>('tempo', 120);
 export const tapsAtom = atom<Taps>([]);
 
-export const tapTempoAtom = atom(null, (get, set) => {
+export const tapTempoAtom = atom(undefined, (get, set) => {
   const time = Date.now();
   const taps = [...get(tapsAtom), time];
 

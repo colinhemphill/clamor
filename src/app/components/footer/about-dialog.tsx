@@ -7,7 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/app/components/ui/dialog';
-import ClamorLogo from '../ClamorLogo';
+import ClamorLogo from '../clamor-logo';
 
 export default function AboutDialog() {
   return (
