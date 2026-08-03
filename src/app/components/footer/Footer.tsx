@@ -1,5 +1,5 @@
 import { Alert, AlertDescription } from '@/app/components/ui/alert';
-import { Github } from 'lucide-react';
+import { SiGithub } from '@icons-pack/react-simple-icons';
 import { buttonVariants } from '../ui/button';
 import AboutDialog from './AboutDialog';
 import Downloads from './Downloads';
@@ -27,7 +27,7 @@ export default function Footer() {
             href="https://github.com/colinhemphill/clamor"
           >
             <span className="sr-only">GitHub</span>
-            <Github size="1.25em" />
+            <SiGithub size="1.25em" />
           </a>
         </AlertDescription>
       </Alert>
